@@ -29,11 +29,17 @@ The dataset is optained from the Eidgenössische Technische Hochschule (ETH) Zü
 The dataset includes around 3 hours of high-quality audio per dialect together with Swiss German and High German transcripts.
 The reduced raw dataset, containing only the Swiss German and High German transcripts can be found in the folder data/raw_data/sentences_ch_de_transcribed.json.
 
+## Installation & Requirements
 
+The code is run on Google Colab with the following additional requirements:
+
+```bash
+pip install sentencepiece transformers==4.33 datasets wandb sacremoses sacrebleu -q
+```
 
 ## Notebook Files
 
-To reproduce the results of this project, the notebooks in the folder code can be used. We used Google Colab to execute the notebooks. 
+To reproduce the results of this project, the notebooks in the folder code can be used. We used Google Colab to execute the notebooks. Each notebook contains further information and instructions. 
 
 **data_preperation.ipynb**:
 * Preprocess the raw data file, generate the training and test set and store the resulting csv files in the folder /data.
@@ -45,16 +51,4 @@ To reproduce the results of this project, the notebooks in the folder code can b
 * Notebook to generate the translations between the source language (BE) and the target language (DE) using the five different models (trained on different embedding strategies). The finetuned models for the Swiss German dialects can be found [here](https://drive.google.com/drive/folders/1Vfe1fAmGQdUWecqt2HKNxUkObRbRqfFo?usp=sharing).
 
 **evaluation_statistics.ipynb**: 
-
-***
-
-## Installation & Requirements
-
-The code is run on Google Colab with the following additional requirements:
-
-```bash
-pip install sentencepiece transformers==4.33 datasets wandb sacremoses sacrebleu -q
-```
-
-## Instructions
-
+* Notebook to calculate the evaluation score and test statistics. 
